@@ -1,0 +1,31 @@
+.sidebarnav label{
+    display:block;
+}
+.oviya img{
+    width: 251px;
+    height: 126px;
+}
+.controller-container{
+    width:68%;
+    padding:5%;
+    
+ }
+ .controller-container> *{
+    width:100%;
+}
+ .button{
+     float: right;
+     margin-left: 5px;
+ }
+ .container-wrapper{
+     clear: both;
+ }
+ .viewbtn-wrapper{
+     float: right;
+     margin-right: 8px;
+ }
+ .box-container-wrapper{
+    box-shadow: 0px 0px 10px 4px rgba(119,119,119,0.75); 
+    border:1px solid;
+    margin:5px 80px 2px 90px;
+ }

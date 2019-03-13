@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "led": {
+    "IOT-project": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/led",
+            "outputPath": "dist/IOT-project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "led:build"
+            "browserTarget": "IOT-project:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "led:build:production"
+              "browserTarget": "IOT-project:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "led:build"
+            "browserTarget": "IOT-project:build"
           }
         },
         "test": {
@@ -103,7 +103,7 @@
         }
       }
     },
-    "led-e2e": {
+    "IOT-project-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "led:serve"
+            "devServerTarget": "IOT-project:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "led:serve:production"
+              "devServerTarget": "IOT-project:serve:production"
             }
           }
         },
@@ -132,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "led"
+  "defaultProject": "IOT-project"
 }

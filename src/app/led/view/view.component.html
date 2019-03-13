@@ -1,0 +1,47 @@
+
+
+    <div>
+    <button mat-raised-button class="viewbtn-wrapper" (click)= "Ledtoggle()">view</button>
+    </div>
+
+   <div class = "box-container-wrapper">
+    <div *ngFor = "let list of ledList" >
+    <div class="sidebarnav"*ngIf="Ledshow">
+        <button class="button" mat-button><mat-icon>delete</mat-icon></button>
+        <button class="button" mat-button><mat-icon>edit</mat-icon></button>
+      <mat-grid-list  class= "container-wrapper"cols="3" rowHeight = "200px" width = "500px">
+          <mat-grid-tile class= "oviya"> 
+            <img  src="./assets/images/oviya.png">
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="controller-container">  
+                <!-- <mat-form-field>
+                   <input matInput placeholder="floor No">
+                </mat-form-field> -->
+                <mat-form-field>
+                    <input  matInput value={{list.ledname}} placeholder="Led name">
+                </mat-form-field>
+                <!-- <div>
+                   <label>Brightness:</label>
+                   <input  class="input-wrapper" type="range" min ="0" max = "255">
+                   {{rangevalue}}  
+                </div> -->
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="controller-container"> 
+                <span>Led colour:</span>
+                <select name = "ledcolor">
+                     <option *ngFor= "let led of leds" >{{led}}</option>
+                </select>
+                <!-- <mat-form-field>
+                    <input matInput placeholder="Buliding name">
+                </mat-form-field> -->
+           </div> 
+          </mat-grid-tile>
+      </mat-grid-list>
+            
+       
+    </div>
+</div>
+</div>

@@ -1,0 +1,72 @@
+  
+  body{
+      font-size: 18px;
+  }.headerdiv{
+    background-color: black;
+    display:block;
+    height:55px;
+    color:red;
+    text-align: center;
+    font-size:30px;
+ }
+ .addcontainer button{
+     float:right;
+ }
+ .addcontainer img{
+     width:20px;
+ }
+ .addcontainer-wrapper{
+     
+     box-shadow: 0px 0px 20px 4px rgba(119,119,119,0.75); 
+     border:1px solid;
+     margin:0px 60px 0px 75px;
+ }
+  
+ 
+mat-sidenav-container{
+    height:100%;
+}
+mat-sidenav , mat-sidenav-content{
+    padding:16px;
+}
+mat-sidenav{
+    background-color:rgb(38, 197, 73);
+    width:200px;
+    
+}
+mat-sidenav button{
+    background-color:rgb(38, 197, 73);
+    width:200px;
+}
+
+  mat-form-field {
+      display:block;
+  }
+  /* .addcontainer-wrapper img{
+     width:20px;
+     
+  }
+  .addcontainer-wrapper button{
+    float:right;
+    
+ } */
+ .controller-container-wrapper {
+     clear: both;
+     
+ }
+  .controller-container{
+     width:100%;
+     padding:5%;
+     
+  }
+  .controller-container> *{
+      width:100%;
+  }
+  .button button{
+      margin-left:4px;
+  }
+  .oviya img{
+      width: 251px;
+      height: 126px;
+  }
+  
