@@ -17,9 +17,15 @@ export class ViewService {
       return response;
     }));
   }
-  public deleteData(): Observable<any> {
-    const url = `${environment.API_ENDPOINT}/led/delete/`;
+  public deleteData(data): Observable<any> {
+    const url = `${environment.API_ENDPOINT}led/delete/?id=${data.id}&deleted=true`;
     return this.http.delete(url).pipe(map(response => {
+      return response;
+    }));
+  }
+  public updateLed(data): Observable<any> {
+    const url = `${environment.API_ENDPOINT}led/update`;
+    return this.http.put(url, data).pipe(map(response => {
       return response;
     }));
   }

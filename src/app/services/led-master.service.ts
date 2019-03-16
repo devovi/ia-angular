@@ -23,4 +23,15 @@ export class LedMasterService {
  // let  url: 'http://localhost:8000/led/create';
 
   }
+//   public getData(data): Observable<any> {
+//     const url = `${environment.API_ENDPOINT}led/findall/`;
+//     return this.http.get(url, data).pipe(map(response => {
+//       return response;
+//     }));
+//   //  return environment.APIEnd.put(data).url
+//   // }
+//  // let  url: 'http://localhost:8000/led/create';
+
+//   }
+
 }

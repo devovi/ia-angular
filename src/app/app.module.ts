@@ -1,11 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LedMasterComponent } from './led/led/led-master.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ViewComponent } from './led/view/view.component';
 import {
   MatButtonModule,
   MatMenuModule,
@@ -27,9 +25,8 @@ import { routing } from './app.routing';
 @NgModule({
   declarations: [
     AppComponent,
-    LedMasterComponent,
-    ViewComponent,
-    DeleteComponent
+    DeleteComponent,
+    routingComponents
   ],
   imports: [
     BrowserModule,
