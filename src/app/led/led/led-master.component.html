@@ -1,18 +1,18 @@
 <header class="headerdiv">
     Oviya
-     <button type="button" class = "list" mat-button (click)="drawer.toggle()">
+     <!-- <button type="button" class = "list" mat-button (click)="drawer.toggle()">
         <mat-icon>list</mat-icon>
-    </button>
+    </button> -->
 </header>   
-<mat-drawer-container class="example-container" autosize>
-           <mat-drawer class = "list" #drawer class="example-sidenav" mode="side">
+<!-- <mat-drawer-container class="example-container" autosize> -->
+           <!-- <mat-drawer class = "list" #drawer class="example-sidenav" mode="side">
                 <button  (click)="showFiller = !showFiller" mat-raised-button>
                   Led  
                 </button>
-           </mat-drawer>
+           </mat-drawer> -->
            <!-- center page start -->
           <div class="example-sidenav-content"> 
-                <div *ngIf="showFiller">      
+                <!-- <div *ngIf="showFiller">       -->
                     <form [formGroup] = "form">   
                         <div class="addcontainer">
                             <button  (click) = "Addtoggle()"><img  src="./assets/images/addition-icon.png"></button>
@@ -64,6 +64,6 @@
                               </div>
                      </form>
                      <app-view></app-view>
-                   </div>
+                   <!-- </div> -->
               </div>
- </mat-drawer-container>     
+ <!-- </mat-drawer-container>      -->
