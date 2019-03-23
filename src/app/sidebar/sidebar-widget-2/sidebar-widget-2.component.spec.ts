@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LedMasterComponent } from './led-master.component';
+import { SidebarWidget2Component } from './sidebar-widget-2.component';
 
-describe('LedMasterComponent', () => {
-  let component: LedMasterComponent;
-  let fixture: ComponentFixture<LedMasterComponent>;
+describe('SidebarWidget2Component', () => {
+  let component: SidebarWidget2Component;
+  let fixture: ComponentFixture<SidebarWidget2Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LedMasterComponent ]
+      declarations: [ SidebarWidget2Component ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LedMasterComponent);
+    fixture = TestBed.createComponent(SidebarWidget2Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

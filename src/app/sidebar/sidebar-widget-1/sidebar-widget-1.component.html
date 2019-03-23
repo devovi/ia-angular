@@ -1,0 +1,9 @@
+<div class="create_all" >
+<div class="create_devices" *ngFor="let devices of DeviceList.lists">
+ <div class="my_class" (click)="clickEvent( devices )"  >
+    {{ devices.name }}
+
+</div>
+
+</div>
+</div>

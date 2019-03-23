@@ -1,55 +1,40 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule, routingComponents } from './app-routing.module';
+// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// import { SharedModule } from './shared/shared.module';
+import { RequestService  } from './shared/services/request.service';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
-import {
-  MatButtonModule,
-  MatMenuModule,
-  MatToolbarModule,
-  MatIconModule,
-  MatCheckboxModule,
-  MatCardModule,
-  MatSidenavModule,
-  MatFormFieldModule
-} from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatInputModule} from '@angular/material/input';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {LedMasterService} from './services/led-master.service';
-import { DeleteComponent } from './led/delete/delete.component';
+import { MatExpansionModule } from '@angular/material';
+import { SidebarModule } from './sidebar/sidebar.module';
+import { WidgetContainerComponent } from './sidebar/widget-container/widget-container.component';
+import { LedCardComponent } from './device/led-card/led-card.component';
+// import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { FormsModule } from '@angular/forms';
 
 import { routing } from './app.routing';
+import { HttpModule } from '@angular/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    DeleteComponent,
-    routingComponents
+    LedCardComponent,
+    WidgetContainerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatCardModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,
-    MatInputModule,
-    MatSidenavModule,
-    MatGridListModule,
-    MatFormFieldModule,
-    routing
+    MatExpansionModule,
+    SidebarModule,
+    // MatSlideToggleModule,
+    // SharedModule,
+    routing,
+    HttpModule,
+    FormsModule
   ],
-  exports: [MatButtonModule, MatCheckboxModule, MatGridListModule],
-  providers: [LedMasterService],
+  providers: [RequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
