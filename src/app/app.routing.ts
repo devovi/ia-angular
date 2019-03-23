@@ -1,25 +1,15 @@
 import {Routes, RouterModule} from '@angular/router';
 
+// import { LedMasterComponent } from './led/led/led-master.component';
+import { ViewComponent } from './led/view/view.component';
 
-import { LedCardComponent } from './device/led-card/led-card.component';
-
-import {ModuleWithProviders} from "@angular/core";
+import {ModuleWithProviders} from '@angular/core';
 
 const routes: Routes = [
-  { path: 'led', component: LedCardComponent },
-
-
-  // {
-  //   path: '',
-  //   // component: ThirdCompComponent,
-  //   children: [
-  //     {
-  //       path: "chil-mod1",
-  //       loadChildren: './first/first.module#FirstModule'
-  //     }
-  //   ]
-  // }
-
+//   { path: 'led/create', component: LedMasterComponent },
+  { path: 'led/view', component: ViewComponent },
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {useHash: false});
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {
+    useHash: false
+});

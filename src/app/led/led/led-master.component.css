@@ -1,0 +1,98 @@
+  
+  body{
+      font-size: 18px;
+  }.headerdiv{
+    background-color: black;
+    display:block;
+    height:55px;
+    color:red;
+    
+    font-size:30px;
+ }
+
+ .addcontainer button{
+    float:right;
+     
+ }
+ .addcontainer img{
+     width:20px;
+ }
+ .addcontainer-wrapper{
+     
+     box-shadow: 0px 0px 20px 4px rgba(119,119,119,0.75); 
+     border:1px solid;
+     width: 550px;
+     margin:0px 80px 2px 90px;
+ }
+  
+ 
+mat-sidenav-container{
+    height:100%;
+}
+mat-sidenav , mat-sidenav-content{
+    padding:16px;
+}
+mat-sidenav{
+    background-color:rgb(38, 197, 73);
+    width:200px;
+    
+}
+mat-sidenav button{
+    background-color:rgb(38, 197, 73);
+    width:200px;
+}
+
+  mat-form-field {
+      display:block;
+  }
+  /* .addcontainer-wrapper img{
+     width:20px;
+     
+  }
+  .addcontainer-wrapper button{
+    float:right;
+    
+ } */
+ .list{
+     position: fixed;
+ }
+ .controller-container-wrapper {
+     clear: both;
+     
+ }
+  .controller-container{
+     width:100%;
+     padding:5%;
+     
+  }
+  .controller-container> *{
+      width:100%;
+    
+  }
+  .button button{
+      margin-left:4px;
+  }
+  .oviya img{
+      width: 50%;
+      
+      
+  }
+  .example-container {
+    width: 100%;
+    height: 500px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  /* .example-sidenav-content {
+    height: 100%;
+    align-items: center;
+    
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+    background-color:black;
+  } */
+  .headerdiv mat-icon{
+      float:right;
+  }

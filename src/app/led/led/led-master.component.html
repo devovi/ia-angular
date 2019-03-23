@@ -1,0 +1,68 @@
+<header class="headerdiv">
+    Oviya
+     <!-- <button type="button" class = "list" mat-button (click)="drawer.toggle()">
+        <mat-icon>list</mat-icon>
+    </button> -->
+</header>   
+<!-- <mat-drawer-container class="example-container" autosize> -->
+           <!-- <mat-drawer class = "list" #drawer class="example-sidenav" mode="side">
+                <button  (click)="showFiller = !showFiller" mat-raised-button>
+                  Led  
+                </button>
+           </mat-drawer> -->
+           <!-- center page start -->
+          <div class="example-sidenav-content"> 
+                <!-- <div *ngIf="showFiller">       -->
+                    <form [formGroup] = "form">   
+                        <div class="addcontainer">
+                            <button  (click) = "Addtoggle()"><img  src="./assets/images/addition-icon.png"></button>
+                        </div> 
+                        <div >
+                            <div class="controller-container-wrapper" *ngIf = "Addshow">
+                               <mat-grid-list class="addcontainer-wrapper" cols="3" rowHeight = "200px" > 
+                                     <mat-grid-tile class= "oviya">
+                                         <img  src="./assets/images/oviya.png">
+                                     </mat-grid-tile>
+                                     <mat-grid-tile>  
+                                         <div class="controller-container">
+                                             <input type="hidden" formControlName = "key">  
+                                             <mat-form-field>
+                                                <input matInput placeholder="floor No*" formControlName = "floorNo" value={{floorno}} (input) = "floornumbervalue($event)" name="floorno">
+                                                <mat-error *ngIf="form.get('floorNo').hasError">{{message}}</mat-error>
+                                             </mat-form-field>
+                                             <mat-form-field>
+                                                <input  matInput placeholder="Led name" formControlName = "ledName"  value={{ledname}} (input) = "lednamevalue($event)" name="ledname">
+                                                <!-- <mat-error *ngIf="let validation of formValidationMessage.ledName"></mat-error> -->
+                                                <!-- <mat-error  *ngIf="form.get('ledName').hasError() && (form.get('ledName').dirty || form.get('ledName').touched)">{{message}}</mat-error> -->
+                                             </mat-form-field> 
+                                             <div>
+                                                <label>Brightness:</label>
+                                                <input  class="input-wrapper" type="range" min ="0" max = "255" value = "0" (input) = "valueChanged($event)" FormControlName = "Brightness" name="Brightness" required>
+                                                {{rangevalue}}  
+                                            </div>
+                                         </div>
+                                     </mat-grid-tile> 
+                                     <mat-grid-tile>
+                                          <div class="controller-container"> 
+                                              <span>Led colour:</span>
+                                              <select name = "ledcolor" formControlName = "ledcolor" (change) = "ledcolorvalueChanged($event)" value={{ledcolor}}>
+                                                  <option *ngFor= "let led of leds" >{{led}}</option>
+                                              </select>
+                                              <mat-form-field>
+                                                 <input matInput placeholder="Buliding name*" formControlName = "buildingname" (input) = "bulidingnamevalue($event)" name="bulidingname" value={{bulidingname}} >
+                                              </mat-form-field>
+                                              <div class="button">
+                                                 <button mat-raised-button color="primary" type = "submit" (click)="save()" [disabled]="form.invalid" routerLink = '/view'>submit</button>
+                                                 <button mat-raised-button color="warn" (click)="clearall()">Clear</button>
+                                                 <button mat-raised-button color="warn">Cancel</button>
+                                              </div>
+                                          </div> 
+                                  </mat-grid-tile> 
+                                 </mat-grid-list>
+                                 </div>
+                              </div>
+                     </form>
+                    
+                   <!-- </div> -->
+              </div>
+ <!-- </mat-drawer-container>      -->
