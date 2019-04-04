@@ -12,7 +12,9 @@ import {
   MatCheckboxModule,
   MatCardModule,
   MatSidenavModule,
-  MatFormFieldModule
+  MatSortModule,
+  MatTableModule,
+  MatFormFieldModule,
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
@@ -22,11 +24,16 @@ import {LedMasterService} from './services/led-master.service';
 import { DeleteComponent } from './led/delete/delete.component';
 
 import { routing } from './app.routing';
+import { SensorviewComponent } from './sensor/pressureSensor/sensorview/sensorview.component';
+import { SensoraddComponent } from './sensor/pressureSensor/sensoradd/sensoradd.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     DeleteComponent,
-    routingComponents
+    routingComponents,
+    SensorviewComponent,
+    SensoraddComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,10 +53,12 @@ import { routing } from './app.routing';
     MatSidenavModule,
     MatGridListModule,
     MatFormFieldModule,
+    MatTableModule,
+    MatSortModule,
     routing
   ],
   exports: [MatButtonModule, MatCheckboxModule, MatGridListModule],
-  providers: [LedMasterService],
+  providers: [LedMasterService, routingComponents, SensorviewComponent,SensoraddComponent ] ,
   bootstrap: [AppComponent]
 })
 export class AppModule { }

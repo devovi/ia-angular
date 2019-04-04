@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup , FormBuilder, Validators} from '@angular/forms';
 import {LedMasterService} from '../../services/led-master.service';
-
+import {ViewComponent} from '../view/view.component';
 @Component({
   selector: 'app-led-master',
   templateUrl: './led-master.component.html',
@@ -22,8 +22,8 @@ leds  = [ 'Red', 'Blue', 'Green'];
  public ledcolor = '';
  public showFiller = false;
  public listFiller = true;
-
-  constructor(private ledMasterservice: LedMasterService) {
+ 
+  constructor(private ledMasterservice: LedMasterService, public viewComponent: ViewComponent) {
     this.Addshow = false;
     this.ledmastershow = false;
     this.form = new FormGroup ({
@@ -64,7 +64,6 @@ leds  = [ 'Red', 'Blue', 'Green'];
     // });
   }
 
-
 valueChanged(e) {
   this.rangevalue = (e.target.value);
 }
@@ -81,9 +80,6 @@ ledcolorvalueChanged(e) {
   this.ledcolor = (e.target.value);
 }
 
- Addtoggle() {
-   this.Addshow = !this.Addshow;
- }
  Addtogglledmastertogglee() {
   this.ledmastershow = !this.ledmastershow;
 }
@@ -98,6 +94,7 @@ save() {
   console.log(data);
   this.ledMasterservice.saveData(data).subscribe(res => {
     console.log(res);
+    this.viewComponent.addandView();
   });
 
 

@@ -1,0 +1,43 @@
+     
+<form [formGroup] = "form">     
+     <div class="sidebarnav">
+              <mat-grid-list  class= "container-wrapper"cols="3" rowHeight = "200px">
+              <mat-grid-tile class= "oviya">
+                  <img  src="./assets/images/oviya.png">
+               </mat-grid-tile>
+               <mat-grid-tile>
+                   <div class="controller-container">
+                       <mat-form-field>
+                           <input matInput type="text" placeholder="Sensor Name" formControlName = "sensorName" (input) = "sensorvalue($event)" name = "sensorName" value={{sensorName}}>
+                       </mat-form-field>
+                       <span>Min Value:</span>
+                       <select name = "minvalue"  (change) = "tempminvalueChanged($event)" formControlName = "minValue" name = "minValue" value={{minValue}}>
+                          <option *ngFor= "let temp of mintemps" >{{temp}}</option>
+                       </select>
+                      
+                      
+                   </div>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                   <div class="controller-container">
+                    
+                      <span>Max Value:</span>
+                       <select name = "maxvalue" formControlName = "maxValue" (change) = "tempmaxvalueChanged($event)"name = "maxValue" value={{maxValue}} >
+                          <option *ngFor= "let temp of maxtemps" >{{temp}}</option>
+                       </select>
+                      
+                       <span>Mode:</span>
+                       <select name = "mode" formControlName = "mode" (change) = "modevalueChanged($event)" name = "mode" value={{mode}}>
+                          <option *ngFor= "let mode of modes" >{{mode}}</option>
+                       </select>
+                       <div class="button">
+                          <button mat-raised-button color="primary" type = "submit" (click)="save()" [disabled]="form.invalid" routerlink = '/pressureSensorView'>submit</button>
+                          <button mat-raised-button color="warn" (click)="clearall()">Clear</button>
+                          <button mat-raised-button color="warn">Cancel</button>
+                       </div>
+                  </div>
+              </mat-grid-tile>
+          </mat-grid-list>
+       <!-- </div>    -->
+    </div>
+   </form>

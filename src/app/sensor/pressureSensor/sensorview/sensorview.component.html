@@ -1,0 +1,43 @@
+<div class = "box-container-wrapper">
+  <div *ngFor = "let list of sensorList">
+     {{list.minvalue}}
+    <div class="sidebarnav">
+        <button class="button" mat-button><mat-icon (click) = "deleteData(list)">delete</mat-icon></button>
+        <button class="button" mat-button><mat-icon (click) = "changeStatus(list)" >edit</mat-icon></button>
+        <mat-grid-list  class= "container-wrapper"cols="3" rowHeight = "200px">
+            <mat-grid-tile class= "oviya">
+                <img  src="./assets/images/oviya.png">
+             </mat-grid-tile>
+             <mat-grid-tile>
+                 <div class="controller-container">
+                     <mat-form-field>
+                         <input matInput type="text" [disabled] = "!isEdit" placeholder="Sensor Name" value ={{list.tempname}} (input) = "sensorvalue($event)"  name = "sensorname">
+                     </mat-form-field>
+                     <span>Min Value:</span>
+                     <select name = "minvalue" [disabled] = "!isEdit" (change) = "tempminvalueChanged($event)" value ={{list.mintemp}} >
+                        <option *ngFor= "let temp of mintemps" >{{temp}}</option>
+                     </select>
+                    
+                    
+                 </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                 <div class="controller-container">
+                    <span>Max Value:</span>
+                     <select name = "maxvalue" [disabled] = "!isEdit" (change) = "tempmaxvalueChanged($event)" value ={{list.maxtemp}}>
+                        <option *ngFor= "let temp of maxtemps" >{{temp}}</option>
+                     </select>
+                     <span>Mode:</span>
+                     <select name = "mode" [disabled] = "!isEdit" (change) = "modevalueChanged($event)" value ={{list.mode}}>
+                        <option *ngFor= "let mode of modes" >{{mode}}</option>
+                     </select>
+                        <div mat-dialog-actions  *ngIf="isEdit">
+                             <button mat-raised-button mat-button (click)="onCancelClick()">cancel</button>
+                             <button mat-raised-button mat-button (click)="onLedUpdate()" cdkFocusInitial>Update</button>
+                        </div>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+     </div>   
+  </div>
+</div>

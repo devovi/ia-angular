@@ -10,13 +10,6 @@
     font-size:30px;
  }
 
- .addcontainer button{
-    float:right;
-     
- }
- .addcontainer img{
-     width:20px;
- }
  .addcontainer-wrapper{
      
      box-shadow: 0px 0px 20px 4px rgba(119,119,119,0.75); 

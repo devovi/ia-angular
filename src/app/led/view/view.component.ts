@@ -18,6 +18,11 @@ export class ViewComponent implements OnInit {
   public buildingname = null;
   public floorno = 0;
   public ledEditId = null;
+  public hideAdd:boolean = true;
+  public addCard: boolean = true;
+
+public Addshow: boolean ;
+public ADD: any = 'Addshow';
   public form: FormGroup;
   constructor(private viewService: ViewService) {
     this.Ledshow = true;
@@ -49,6 +54,14 @@ export class ViewComponent implements OnInit {
  floornumbervalue(e) {
     this.floorno = (e.target.value);
  }
+ Addtoggle() {
+  this.addCard = false;
+}
+
+addandView() {
+  this.addCard = true;
+}
+
   ngOnInit() {
     this.getAllLedList();
   }
@@ -56,12 +69,15 @@ export class ViewComponent implements OnInit {
     this.viewService.getData().subscribe( res => {
       console.log(res);
       this.ledList = res.data;
+      this.ledList.reverse();
     });
   }
   Ledtoggle() {
     this.Ledshow = !this.Ledshow;
   }
-
+showHide() {
+  this.hideAdd = true;
+}
   deleteData(item) {
     const fToDelete = confirm(`Are you sure to delete?`);
     if (fToDelete === true) {
