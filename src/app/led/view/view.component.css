@@ -9,21 +9,12 @@
 }
 .oviya img{
     width: 50%;
-    
 }
-.addcontainer mat-icon{
-    float:right;
-     
- }
- .addcontainer img{
-     width:20px;
- }
-
 .controller-container{
     margin-left: 20px;
     display: inline-block;
     vertical-align: middle;
-    
+
  }
  .controller-container> *{
     width:100%;
@@ -80,4 +71,8 @@
      max-width: 500px;
     margin: 0 auto;
     padding: 10px;
+ }
+
+ .margl5{
+   margin-left: 10%;
  }

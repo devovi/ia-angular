@@ -1,63 +1,116 @@
 
-
-    <div [hidden] = "hideAdd">
+  <div class="col-md-7 margl5" >
+    <!-- <div> -->
     <!-- <button mat-raised-button class="viewbtn-wrapper" (click)= "Ledtoggle()">view</button> -->
-    <!-- <app-led-master></app-led-master> -->
-    </div>
-    
-        <!-- <button  (click) = "Addtoggle()"><img  src="./assets/images/addition-icon.png"></button> -->
-        <div class="addcontainer">
-            <mat-icon (click) = "Addtoggle()" >add_circle</mat-icon>
-        </div>
-        <div [hidden]="addCard" >
-           <app-led-master></app-led-master>
-      </div> 
-    
-   <div class = "box-container-wrapper">
-        <div *ngFor = "let list of ledList">
-           <div class="sidebarnav"*ngIf="Ledshow">
-                <button class="button" mat-button><mat-icon (click) = "deleteData(list)">delete</mat-icon></button>
-                <button class="button" mat-button><mat-icon (click) = "changeStatus(list)" >edit</mat-icon></button>
-                <form [formGroup] = "form"> 
-                  <mat-grid-list  class= "container-wrapper"cols="3" rowHeight = "200px">
-                      <mat-grid-tile class= "oviya">
-                          <img  src="./assets/images/oviya.png">
-                      </mat-grid-tile>
-                      <mat-grid-tile>  
-                        <div class="controller-container">
-                           <input type="hidden" formControlName = "key">   
-                           <mat-form-field [formGroup]="form">
-                                <input matInput [disabled]="!isEdit"  placeholder="floor No" value={{list.floorno}} (input) = "floornumbervalue($event)" name="floorno">
-                           </mat-form-field>
-                           <mat-form-field>
-                               <input  matInput [disabled]="!isEdit" placeholder="Led name"  value={{list.ledname}} (input) = "lednamevalue($event)" name="ledname">
-                           </mat-form-field> 
-                           <div>
-                              <label>Brightness:</label>
-                              <input  class="input-wrapper" [disabled]="!isEdit" value="{{list.brightness}}" type="range" min ="0" max = "255" value = "0" (input) = "valueChanged($event)" name="Brightness" required>
-                               {{list.brightness}}  
-                           </div>
-                        </div>
-                       </mat-grid-tile> 
-                       <mat-grid-tile>
-                           <div class="controller-container"> 
-                              <span>Led colour:</span>
-                              <select name = "ledcolor" [disabled]="!isEdit" (change) = "ledcolorvalueChanged($event)" value={{list.color}}>
-                                   <option *ngFor= "let led of leds" >{{led}}</option>
-                              </select>
-                              <mat-form-field>
-                                  <input matInput [disabled]="!isEdit" placeholder="Buliding name" (input) = "bulidingnamevalue($event)" name="bulidingname" value={{list.buildingname}} >
-                              </mat-form-field>
-                              <div mat-dialog-actions *ngIf="isEdit">
-                                    <button mat-raised-button mat-button (click)="onCancelClick()">cancel</button>
-                                    <button mat-raised-button mat-button (click)="onLedUpdate()" cdkFocusInitial>Update</button>
-                             </div>
-                           </div> 
-                        </mat-grid-tile>
-                   </mat-grid-list>
-                 </form>
+    <!-- </div> -->
 
+   <div class = "box-container-wrapper">
+    <div *ngFor = "let list of ledList">
+    <div class="sidebarnav"*ngIf="Ledshow">
+        <button class="button" mat-button><mat-icon (click) = "deleteData(list)">delete</mat-icon></button>
+        <button class="button" mat-button><mat-icon (click) = "changeStatus(list)" >edit</mat-icon></button>
+        <form [formGroup] = "form">
+      <mat-grid-list  class= "container-wrapper"cols="3" rowHeight = "200px">
+            <!-- <div class="imageBlock">
+              <img  src="./assets/images/oviya.png">
+            </div>
+            <div class="controller-container">
+                <div class="controller-container-item">
+                  <div class="controller-container-item__details">
+                    <label for="">Led Name:</label>
+                    <span>{{list.ledname}}</span>
+                  </div>
+                  <div class="controller-container-item__details">
+                    <label for="">Led Color:</label>
+                    <span>{{list.color}}</span>
+                  </div>
+                  <div class="controller-container-item__details">
+                    <label for="">Floor No:</label>
+                    <span>{{list.floorno}}</span>
+                  </div>
+                  <div class="controller-container-item__details">
+                    <label for="">Building Name:</label>
+                    <span>{{list.buildingname}}</span>
+                  </div>
+                  <div class="controller-container-item__details">
+                    <label for="">Brightness:</label>
+                    <span>{{list.brightness}}</span>
+                  </div>
+                </div>
+           </div>  -->
+
+           <mat-grid-tile class= "oviya">
+            <img  src="./assets/images/oviya.png">
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controller-container">
+              <input type="hidden" formControlName = "key">
+                <mat-form-field [formGroup]="form">
+                   <input matInput [disabled]="!isEdit"  placeholder="floor No" value={{list.floorno}} (input) = "floornumbervalue($event)" name="floorno">
+
+                </mat-form-field>
+                <mat-form-field>
+                   <input  matInput [disabled]="!isEdit" placeholder="Led name"  value={{list.ledname}} (input) = "lednamevalue($event)" name="ledname">
+                   <!-- <mat-error *ngIf="let validation of formValidationMessage.ledName"></mat-error> -->
+                   <!-- <mat-error  *ngIf="form.get('ledName').hasError() && (form.get('ledName').dirty || form.get('ledName').touched)">{{message}}</mat-error> -->
+                </mat-form-field>
+                <div>
+                   <label>Brightness:</label>
+                   <input  class="input-wrapper" [disabled]="!isEdit" value="{{list.brightness}}" type="range" min ="0" max = "255" value = "0" (input) = "valueChanged($event)" name="Brightness" required>
+                   {{list.brightness}}
+               </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+             <div class="controller-container">
+                 <span>Led colour:</span>
+                 <select name = "ledcolor" [disabled]="!isEdit" (change) = "ledcolorvalueChanged($event)" value={{list.color}}>
+                     <option *ngFor= "let led of leds" >{{led}}</option>
+                 </select>
+                 <mat-form-field>
+                    <input matInput [disabled]="!isEdit" placeholder="Buliding name" (input) = "bulidingnamevalue($event)" name="bulidingname" value={{list.buildingname}} >
+
+                 </mat-form-field>
+                 <div mat-dialog-actions *ngIf="isEdit">
+                  <button mat-raised-button mat-button (click)="onCancelClick()">cancel</button>
+                  <button mat-raised-button mat-button (click)="onLedUpdate()" cdkFocusInitial>Update</button>
+                </div>
              </div>
-         </div>
-     </div>
-     
+     </mat-grid-tile>
+      </mat-grid-list>
+      </form>
+      <!-- <div class="editModal"*ngIf="isEdit">
+        <div class="editModal-body">
+          <mat-form-field>
+            <input matInput placeholder="floor No*"  value={{floorno}} (input) = "floornumbervalue($event)" name="floorno">
+
+          </mat-form-field>
+          <mat-form-field>
+            <input  matInput placeholder="Led name"   value={{ledname}} (input) = "lednamevalue($event)" name="ledname">
+
+          </mat-form-field>
+          <div>
+            <label>Brightness:</label>
+            <input  class="input-wrapper" type="range" min ="0" max = "255" (input) = "valueChanged($event)">
+            {{rangevalue}}
+        </div>
+        <span>Led colour:</span>
+        <select name = "ledcolor"  (change) = "ledcolorvalueChanged($event)" value={{ledcolor}}>
+            <option *ngFor= "let led of leds" >{{led}}</option>
+        </select>
+        <mat-form-field>
+          <input matInput placeholder="Buliding name"  (input) = "bulidingnamevalue($event)" name="bulidingname" value={{buildingname}} >
+          <mat-error>This field is Mandatory</mat-error>
+       </mat-form-field>
+        <div mat-dialog-actions>
+          <button mat-raised-button mat-button (click)="onCancelClick()">cancel</button>
+          <button mat-raised-button mat-button (click)="onLedUpdate()" cdkFocusInitial>Update</button>
+        </div>
+
+        </div>
+      </div>
+        -->
+    </div>
+</div>
+</div>
+</div>

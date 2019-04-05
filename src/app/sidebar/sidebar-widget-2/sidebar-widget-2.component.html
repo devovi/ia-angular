@@ -1,0 +1,7 @@
+<div class="device_all" >
+<div class="view_devices create_all" *ngFor="let build of BuidlingList.blists">
+  <p (click)=changefn($event.target.innerText) >
+    {{ build.name }}
+  </p>
+</div>
+</div>

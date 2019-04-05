@@ -1,0 +1,16 @@
+<h1 mat-dialog-title> {{data?.name}}</h1>
+<div mat-dialog-content>
+  <!-- <p *ngFor="let ledvalu of data.value">{{ledvalu.ledname}}&nbsp;&nbsp; {{ledvalu.currentstatus ==true? 'ON':'OFF'}}
+    &nbsp;&nbsp;  {{ledvalu.createdAt | date:'yyyy-MM-dd hh-mm-ss'}}
+  </p> -->
+  <!-- <mat-form-field>
+    <input matInput [(ngModel)]="data.animal">
+  </mat-form-field> -->
+    <canvas id="canvas">{{ chart }}</canvas>
+</div>
+
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <!-- <button mat-button  cdkFocusInitial>Ok</button> -->
+</div>

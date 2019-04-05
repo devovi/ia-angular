@@ -1,6 +1,64 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<router-outlet></router-outlet>
+<!--  -->
+
+<div class="page col-md-12">
+  <div class="page__sidebar col-md-3">
+
+    <mat-accordion multi="true" displayMode="flat">
+      <mat-expansion-panel
+        *ngFor="let panel of config.panels" (click)="changfn($event)">
+
+        <mat-expansion-panel-header>
+          <mat-panel-title  >
+            {{ panel.name }}
+          </mat-panel-title>
+          <!-- <mat-panel-description>
+            {{ panel.description }}
+          </mat-panel-description> -->
+        </mat-expansion-panel-header>
+
+        <!--<p>Panel content goes here</p>-->
+        <app-widget-container
+          [selector]="panel.component.selector"
+          [settings]="panel.component.settings">
+        </app-widget-container>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+
+  <!-- <div class="page__content">
+  </div> -->
+
+
+<!--  -->
+<div [hidden]="showled " class="col-md-9 margl5" style="width:100%;" >
+<app-led-card></app-led-card>
+
+<app-tempsensor-card></app-tempsensor-card>
+
+</div>
+<!-- <div  class="col-md-9 margl5" style="width:100%;" >
+
+
+</div> -->
+<div [hidden]="false " class="col-md-9" >
+
+<app-view></app-view>
+
 <!-- <app-led-master></app-led-master> -->
-<!-- <app-view></app-view> -->
+
+
+</div>
+<div [hidden]="true " class="col-md-9 margll5" >
 <app-sensorview></app-sensorview>
-<app-sensoradd></app-sensoradd>
+</div>
+
+<!-- <div  class="col-md-12 marg20" > -->
+  <!-- <app-led-master></app-led-master> -->
+
+<!-- </div> -->
+
+</div>
+<!-- <app-led-master></app-led-master> -->
+<router-outlet></router-outlet>
